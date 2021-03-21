@@ -1,0 +1,143 @@
+@charset "utf-8";
+/*
+Plugin Name: relyx-utility
+*/
+.rlx_header_note {
+    flex-basis: 100%;
+    color: silver;
+    background-color: #101010;
+    position: relative;
+    top: 0;
+    padding: 0.37em 0; /*黄金比like*/
+}
+.rlx_header_note::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1000px;
+    width: 1000px;
+    background: #101010;
+}
+.rlx_header_note::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1000px;
+    width: 1000px;
+    background: #101010;
+}
+.rlx_header_note h1 {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.rlx_header_note p {
+    margin: 0.33rem 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1em;
+}
+.rlx_header_note .note-sage{
+    color: #666;
+}
+
+/*rlx_postlist*/
+.rlx_postlist {
+    display: flex;
+}
+.rlx_postlist ul{
+    list-style: none;
+    padding: 0;
+
+    /*コンテンツ配置用フレックス指定*/
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -ms-flex-flow:row wrap;
+    flex-flow: row wrap;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+li.rlx_postlist_post{
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    background: rgba(255,255,255, 90%);
+    padding: 10px;
+    /*margin: 2px;*/
+}
+li.rlx_postlist_postnum1{
+    flex-basis: 98%;
+}
+li.rlx_postlist_postnum2{
+    flex-basis: 48%;
+}
+li.rlx_postlist_postnum3{
+    flex-basis: 31%;
+}
+li.rlx_postlist_postnum4{
+    flex-basis: 24%;
+}
+li.rlx_postlist_postnum5{
+    flex-basis: 18%;
+}
+
+.rlx_postlist_thumb{
+    text-align: center;
+}
+.rlx_postlist_thumb > img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+    margin-bottom: 12px;
+}
+
+.rlx_postlist_noimg{
+
+}
+.rlx_postlist_date{
+
+}
+
+
+.rlx_postlist_title{
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.rlx_postlist_title a:hover{
+/*    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+*/}
+
+.rlx_postlist_content{
+    margin-bottom: 1em;
+
+}
+
+/*スマホ表示*/
+@media (max-width: 889.98px){
+    .rlx_postlist ul{
+        /*width: 100%;*/
+    }
+    li.rlx_postlist_post{
+        flex-basis: auto;
+        width: 100%;
+    }
+    .rlx_postlist_thumb > img{
+        width: auto;
+        height: auto;
+    }
+}
